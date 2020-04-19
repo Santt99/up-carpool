@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UP Carpool</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+                    
+</head>
+<style>
+</style>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="input-field col s6 offset-s3">
+                <input type="email" id="email" class="validate"></input>
+                <label for="email">Email</label>
+            </div>    
+            
+        </div>
+        <div class="row">
+            <div class="col s6 offset-s3">
+                <button class="btn waves-effect waves-light" onclick="sendEmail()">Subcribe</button>
+            </div>
+        </div>
+        
+        
+           
+    </div>
+    <script>
+            function sendEmail(){
+                let email = document.getElementById("email").value
+                fetch(`https://up-carpool.herokuapp.com/updatevisit/${email}`)
+            }
+    </script>
+</body>
+</html>
