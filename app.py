@@ -26,10 +26,11 @@ def get_index_js():
 
 
 @app.route('/updatevisit/<email>')
-def update_visit(id, email):
+def update_visit(email):
     from datetime import datetime
     db = DB(DB_URL)
     data = {"$set": {"second_timestamp": datetime.now(), "email": email}}
+    print(request.cookies.get('visitId'))
     key = {"_id": request.cookies.get('visitId')}
     db.update_visit(key, data)
     return dumps({"message": "Succesfully updated visit"})

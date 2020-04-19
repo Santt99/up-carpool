@@ -12,19 +12,72 @@
                     
 </head>
 <style>
+
+    #success_message {
+        color: green;
+    }
+    #fail_message {
+        color: red;
+    }
+    .col h1{
+        color: #b71c1c ;
+    }
+    .row h2{
+        color: #e53935  ;
+    }
+    .feature, .title{
+        text-align: center;
+    }
 </style>
 <body>
     <div class="container">
+        <div class="row title">
+            <div class="col s12 m6 offset-m3">
+                <h1>Conoce</h1>
+                <p>dasdhbasjhdbjhasbjdhbajsbdjbasjhbdjhbasjdb</p>
+            </div>    
+        </div>
+        
         <div class="row">
-            <div class="input-field col s6 offset-s3">
+            <div class="col s12 m4 feature">
+                <div class="row">
+                    <img src="/static/images/arbol.svg"></img>
+                </div>
+                <div class="row">
+                    <h2>Cuida</h2>
+                    <p>dasdhbasjhdbjhasbjdhbajsbdjbasjhbdjhbasjdb</p>
+                </div>
+            </div>
+            <div class="col s12 m4 feature">
+                <div class="row">
+                    <img src="/static/images/manos.svg"></img>
+                </div>
+                <div class="row ">
+                    <h2>Conoce</h2>
+                    <p>dasdhbasjhdbjhasbjdhbajsbdjbasjhbdjhbasjdb</p>
+                </div>
+            </div>
+            <div class="col s12 m4 feature">
+                <div class="row">
+                    <img src="/static/images/dinero.svg"></img>
+                </div>
+                <div class="row">
+                    <h2>Ahorra</h2>
+                    <p>dasdhbasjhdbjhasbjdhbajsbdjbasjhbdjhbasjdb</p>
+                </div>
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="input-field col s8 m6 offset-s2 offset-m3">
                 <input type="email" id="email" class="validate"></input>
                 <label for="email">Email</label>
             </div>    
             
         </div>
-        <div class="row">
+        <div class="row" id="send_button">
             <div class="col s6 offset-s3">
-                <button class="btn waves-effect waves-light" onclick="sendEmail()">Subcribe</button>
+                <button class="btn waves-effect waves-light red darken-4" onclick="sendEmail()">Subcribe</button>
             </div>
         </div>
         
@@ -34,7 +87,15 @@
     <script>
             function sendEmail(){
                 let email = document.getElementById("email").value
-                fetch(`https://up-carpool.herokuapp.com/updatevisit/${email}`)
+                fetch(`http://localhost:5000/updatevisit/${email}`).then((res)=>{
+                    let sendButtonDiv = document.getElementById("send_button")
+                    if(res.status === 200){
+                        sendButtonDiv.innerHTML  += "<div id='success_message' class='col s6 offset-s3'> <p>Email was succesfully registed</p></div>"
+                    }else {
+                        sendButtonDiv.innerHTML  += "<div id='fail_message'class='col s6 offset-s3'> <p>Email was succesfully registed</p></div>"
+                    }
+                    console.log(res)
+                })
             }
     </script>
 </body>
