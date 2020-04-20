@@ -118,7 +118,7 @@
                 let email = document.getElementById("email").value
                 let sendButtonDiv = document.getElementById("send_button")
                 if (email.split("@")[1] === "up.edu.mx"){
-                        fetch(`http://localhost:5000/updatevisit/${email}`).then((res)=>{
+                        fetch(`https://up-carpool.herokuapp.com/updatevisit/${email}`).then((res)=>{
                         
                         if(res.status === 200){
                             sendButtonDiv.innerHTML  += "<div id='success_message' class='col s6 offset-s3'> <p>Registro completado</p></div>"
