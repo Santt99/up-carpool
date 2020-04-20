@@ -9,57 +9,86 @@
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-                    
+    <link href="//db.onlinewebfonts.com/c/2ab02c2937018ee7f2ccc346929ccf57?family=Artifakt+Element" rel="stylesheet" type="text/css"/>    
 </head>
 <style>
+    @import url(//db.onlinewebfonts.com/c/2ab02c2937018ee7f2ccc346929ccf57?family=Artifakt+Element);
 
+    @font-face {
+        font-family: "Artifakt Element"; 
+        src: url("//db.onlinewebfonts.com/t/2ab02c2937018ee7f2ccc346929ccf57.eot"); 
+        src: url("//db.onlinewebfonts.com/t/2ab02c2937018ee7f2ccc346929ccf57.eot?#iefix") format("embedded-opentype"), 
+        url("//db.onlinewebfonts.com/t/2ab02c2937018ee7f2ccc346929ccf57.woff2") format("woff2"), 
+        url("//db.onlinewebfonts.com/t/2ab02c2937018ee7f2ccc346929ccf57.woff") format("woff"), 
+        url("//db.onlinewebfonts.com/t/2ab02c2937018ee7f2ccc346929ccf57.ttf") format("truetype"), 
+        url("//db.onlinewebfonts.com/t/2ab02c2937018ee7f2ccc346929ccf57.svg#Artifakt Element") format("svg"); 
+    }
+    body {
+        font-family: "Artifakt Element";
+    }
     #success_message {
         color: green;
     }
     #fail_message {
         color: red;
     }
-    .col h1{
-        color: #b71c1c ;
+    div h1{
+        color: #8a1b46 ;
+        font-weight: bold;
     }
     .row h2{
-        color: #e53935  ;
+        color: #992451 ;
+        font-weight: bold;
     }
     .feature, .title{
         text-align: center;
+    }
+    .redButton {
+        background-color: #8a1b46 ;
+    }
+    #send_button { 
+        text-align: center;
+    }
+    div img{
+        height: 360px;
     }
 </style>
 <body>
     <div class="container">
         <div class="row title">
             <div class="col s12 m6 offset-m3">
-                <h1>Conoce</h1>
-                <p>dasdhbasjhdbjhasbjdhbajsbdjbasjhbdjhbasjdb</p>
+                <h1>UP Carpool</h1>
+                <p>Queremos unirte a los alumnos de la UP que quieren ride o que queiren rite</p>
             </div>    
         </div>
         
         <div class="row">
             <div class="col s12 m4 feature">
                 <div class="row">
-                    <img src="/static/images/arbol.svg"></img>
+                    <div class="col s12">
+                        <img src="/static/images/arbol.svg"/>
+                            
+                    </div>
+                    <div class="row">
+                        <h2>Cuida</h2>
+                        <p>dasdhbasjhdbjhasbjdhbajsbdjbasjhbdjhbasjdb</p>
+                    </div>
                 </div>
-                <div class="row">
-                    <h2>Cuida</h2>
-                    <p>dasdhbasjhdbjhasbjdhbajsbdjbasjhbdjhbasjdb</p>
-                </div>
+            
             </div>
             <div class="col s12 m4 feature">
                 <div class="row">
-                    <img src="/static/images/manos.svg"></img>
+                    <img  src="/static/images/manos.svg"/>
+                    <div class="row">
+                        <h2>Conoce</h2>
+                        <p>dasdhbasjhdbjhasbjdhbajsbdjbasjhbdjhbasjdb</p>
+                    </div>
                 </div>
-                <div class="row ">
-                    <h2>Conoce</h2>
-                    <p>dasdhbasjhdbjhasbjdhbajsbdjbasjhbdjhbasjdb</p>
-                </div>
+             
             </div>
             <div class="col s12 m4 feature">
                 <div class="row">
-                    <img src="/static/images/dinero.svg"></img>
+                    <img src="/static/images/dinero.svg"/>
                 </div>
                 <div class="row">
                     <h2>Ahorra</h2>
@@ -77,7 +106,7 @@
         </div>
         <div class="row" id="send_button">
             <div class="col s6 offset-s3">
-                <button class="btn waves-effect waves-light red darken-4" onclick="sendEmail()">Subcribe</button>
+                <button class="btn waves-effect waves-light redButton" onclick="sendEmail()">Apartar mi lugar</button>
             </div>
         </div>
         
@@ -87,15 +116,21 @@
     <script>
             function sendEmail(){
                 let email = document.getElementById("email").value
-                fetch(`http://localhost:5000/updatevisit/${email}`).then((res)=>{
-                    let sendButtonDiv = document.getElementById("send_button")
-                    if(res.status === 200){
-                        sendButtonDiv.innerHTML  += "<div id='success_message' class='col s6 offset-s3'> <p>Email was succesfully registed</p></div>"
-                    }else {
-                        sendButtonDiv.innerHTML  += "<div id='fail_message'class='col s6 offset-s3'> <p>Email was succesfully registed</p></div>"
-                    }
-                    console.log(res)
-                })
+                let sendButtonDiv = document.getElementById("send_button")
+                if (email.split("@")[1] === "up.edu.mx"){
+                        fetch(`http://localhost:5000/updatevisit/${email}`).then((res)=>{
+                        
+                        if(res.status === 200){
+                            sendButtonDiv.innerHTML  += "<div id='success_message' class='col s6 offset-s3'> <p>Registro completado</p></div>"
+                        }else {
+                            sendButtonDiv.innerHTML  += "<div id='fail_message'class='col s6 offset-s3'> <p>Error haciendo el registro, intenta mas tarde</p></div>"
+                        }
+                        console.log(res)
+                    })
+                }else{
+                    sendButtonDiv.innerHTML  += "<div id='fail_message'class='col s6 offset-s3'> <p>Escribe un email valido de la UP</p></div>"
+                }
+                
             }
     </script>
 </body>
