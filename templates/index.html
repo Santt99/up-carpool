@@ -37,20 +37,28 @@
         font-weight: bold;
     }
     .row h2{
-        color: #992451 ;
+        color: #5F7ABA ;
         font-weight: bold;
     }
     .feature, .title{
         text-align: center;
+        align-items: center;
     }
     .redButton {
         background-color: #8a1b46 ;
     }
     #send_button { 
-        text-align: center;
+        text-align: justify;
+        align-items: center;
+    }
+    p {
+        text-align: justify;
     }
     div img{
         height: 360px;
+    }
+    .responsive-img{
+        height: 300px !important;
     }
 </style>
 <body>
@@ -58,7 +66,10 @@
         <div class="row title">
             <div class="col s12 m6 offset-m3">
                 <h1>UP Carpool</h1>
-                <p>Queremos unirte a los alumnos de la UP que quieren ride o que queiren rite</p>
+                <p class="flow-text">Queremos unirte a los alumnos de la UP que quieren dar ride o que quieren rite.</p>
+                <p class="flow-text">En este proyecto buscamos fomentar la convivencia entre las personas de la UP, 
+                    crear conciencia ambiental, reducir los tiempos en el estacionamiento y ayudar a la economia de todos. 
+                    Y de esta forma hacer tu traslado mas divertido y eficaz.</p>
             </div>    
         </div>
         
@@ -66,33 +77,50 @@
             <div class="col s12 m4 feature">
                 <div class="row">
                     <div class="col s12">
-                        <img src="/static/images/arbol.svg"/>
-                            
+                        <img  class="responsive-img"src="/static/images/arbol.svg"/>
                     </div>
-                    <div class="row">
+                    
+                    
+                </div>
+                <div class="row">
+                    
+                    <div class="col s12">
                         <h2>Cuida</h2>
-                        <p>dasdhbasjhdbjhasbjdhbajsbdjbasjhbdjhbasjdb</p>
+                        <p  class="flow-text">Ayudanos a cuidar el medio ambiente y crear conciencia, reduciendo la cantidad de automiviles en uso en la ciudad. Ademas ahorraras dinero porque no gastaras en gasolina.</p>
                     </div>
+                   
                 </div>
-            
             </div>
             <div class="col s12 m4 feature">
                 <div class="row">
-                    <img  src="/static/images/manos.svg"/>
-                    <div class="row">
+                    <div class="col s12">
+                        <img  class="responsive-img" src="/static/images/manos.svg"/>
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    
+                    <div class="col s12">
                         <h2>Conoce</h2>
-                        <p>dasdhbasjhdbjhasbjdhbajsbdjbasjhbdjhbasjdb</p>
+                        <p class="flow-text">Con nuetra aplicacion podras conocer a muchas mas personas de la UP, esto te ayudara a mejorar tus conexiones laborales y sociales con gente de tu zona.</p>
                     </div>
+                    
                 </div>
-             
             </div>
             <div class="col s12 m4 feature">
                 <div class="row">
-                    <img src="/static/images/dinero.svg"/>
+                    <div class="col s12">
+                        <img  class="circle responsive-img" src="/static/images/dinero.svg"/>
+                    </div>
+                    
                 </div>
                 <div class="row">
-                    <h2>Ahorra</h2>
-                    <p>dasdhbasjhdbjhasbjdhbajsbdjbasjhbdjhbasjdb</p>
+                    
+                    <div class="col s12">
+                        <h2>Mejor Lugar</h2>
+                        <p class="flow-text">Este beneficio te permite tener acceso a un lugar privilegiado que te permita ahorrar tiempo al estacionarte en un lugar con rapido acceso.</p>
+                    </div>
+                    
                 </div>
             </div>
             

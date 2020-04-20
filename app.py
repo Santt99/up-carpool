@@ -36,4 +36,4 @@ def update_visit(email):
     return dumps({"message": "Succesfully updated visit"})
 
 if __name__ == '__main__':
-    app.run()
+    app.run(port=3000)
