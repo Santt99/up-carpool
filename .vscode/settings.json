@@ -1,0 +1,4 @@
+{
+    "python.pythonPath": "/home/santt99/Documents/Projects/UP-Carpool/Landing-API/venv/bin/python3.7",
+    "python.formatting.provider": "black"
+}

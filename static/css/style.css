@@ -1,0 +1,62 @@
+.red-background {
+  background-color: #a11546 !important;
+}
+
+#success_message {
+  color: green;
+}
+#fail_message {
+  color: red;
+}
+div h1 {
+  color: #8a1b46;
+  font-weight: bold;
+}
+.row h2 {
+  color: #5f7aba;
+  font-weight: bold;
+}
+.feature,
+.title {
+  text-align: center;
+  align-items: center;
+}
+.redButton {
+  background-color: #8a1b46;
+}
+#send_button {
+  text-align: justify;
+  align-items: center;
+}
+p {
+  text-align: justify;
+}
+div img {
+  height: 360px;
+}
+.responsive-img {
+  height: 300px !important;
+}
+.brand-logo img {
+  height: 45px;
+}
+
+@import url("https://db.onlinewebfonts.com/c/2ab02c2937018ee7f2ccc346929ccf57?family=Artifakt+Element");
+
+@font-face {
+  font-family: "Artifakt Element";
+  src: url("https://db.onlinewebfonts.com/t/2ab02c2937018ee7f2ccc346929ccf57.eot");
+  src: url("https://db.onlinewebfonts.com/t/2ab02c2937018ee7f2ccc346929ccf57.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/2ab02c2937018ee7f2ccc346929ccf57.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/2ab02c2937018ee7f2ccc346929ccf57.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/2ab02c2937018ee7f2ccc346929ccf57.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/2ab02c2937018ee7f2ccc346929ccf57.svg#Artifakt Element")
+      format("svg");
+}
+body {
+  font-family: "Artifakt Element";
+}

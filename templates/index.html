@@ -1,165 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UP Carpool</title>
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UP Carpool</title>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <link href="//db.onlinewebfonts.com/c/2ab02c2937018ee7f2ccc346929ccf57?family=Artifakt+Element" rel="stylesheet" type="text/css"/>    
-</head>
-<style>
-    @import url(//db.onlinewebfonts.com/c/2ab02c2937018ee7f2ccc346929ccf57?family=Artifakt+Element);
-
-    @font-face {
-        font-family: "Artifakt Element"; 
-        src: url("//db.onlinewebfonts.com/t/2ab02c2937018ee7f2ccc346929ccf57.eot"); 
-        src: url("//db.onlinewebfonts.com/t/2ab02c2937018ee7f2ccc346929ccf57.eot?#iefix") format("embedded-opentype"), 
-        url("//db.onlinewebfonts.com/t/2ab02c2937018ee7f2ccc346929ccf57.woff2") format("woff2"), 
-        url("//db.onlinewebfonts.com/t/2ab02c2937018ee7f2ccc346929ccf57.woff") format("woff"), 
-        url("//db.onlinewebfonts.com/t/2ab02c2937018ee7f2ccc346929ccf57.ttf") format("truetype"), 
-        url("//db.onlinewebfonts.com/t/2ab02c2937018ee7f2ccc346929ccf57.svg#Artifakt Element") format("svg"); 
-    }
-    body {
-        font-family: "Artifakt Element";
-    }
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link href="//db.onlinewebfonts.com/c/2ab02c2937018ee7f2ccc346929ccf57?family=Artifakt+Element" rel="stylesheet"
+    type="text/css" />
+  <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+  </link>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
     #success_message {
-        color: green;
+      color: green;
     }
+
     #fail_message {
-        color: red;
+      color: #8a1b46;
     }
-    div h1{
-        color: #8a1b46 ;
-        font-weight: bold;
+
+    .feature,
+    .title {
+      text-align: center;
     }
-    .row h2{
-        color: #5F7ABA ;
-        font-weight: bold;
-    }
-    .feature, .title{
-        text-align: center;
-        align-items: center;
-    }
+
     .redButton {
-        background-color: #8a1b46 ;
+      background-color: #8a1b46;
     }
-    #send_button { 
-        text-align: justify;
-        align-items: center;
+
+    #send_button {
+      text-align: justify;
+      align-items: center;
     }
+
     p {
-        text-align: justify;
+      text-align: justify;
+      color: #353535 !important;
     }
-    div img{
-        height: 360px;
+
+    .responsive-img {
+      height: 300px !important;
     }
-    .responsive-img{
-        height: 300px !important;
+
+    .brand-logo img {
+      height: 80px;
+      margin: 5px
     }
-</style>
+
+    .no-shadows {
+      box-shadow: none !important;
+      height: 90px;
+    }
+
+    .navbar-fixed {
+      height: 90px;
+    }
+
+    .material-icons {
+      color: #A2A5A5;
+    }
+  </style>
+</head>
+
 <body>
-    <div class="container">
-        <div class="row title">
-            <div class="col s12 m6 offset-m3">
-                <h1>UP Carpool</h1>
-                <p class="flow-text">Queremos unirte a los alumnos de la UP que quieren dar ride o que quieren rite.</p>
-                <p class="flow-text">En este proyecto buscamos fomentar la convivencia entre las personas de la UP, 
-                    crear conciencia ambiental, reducir los tiempos en el estacionamiento y ayudar a la economia de todos. 
-                    Y de esta forma hacer tu traslado mas divertido y eficaz.</p>
-            </div>    
-        </div>
-        
-        <div class="row">
-            <div class="col s12 m4 feature">
-                <div class="row">
-                    <div class="col s12">
-                        <img  class="responsive-img"src="/static/images/arbol.svg"/>
-                    </div>
-                    
-                    
-                </div>
-                <div class="row">
-                    
-                    <div class="col s12">
-                        <h2>Cuida</h2>
-                        <p  class="flow-text">Ayudanos a cuidar el medio ambiente y crear conciencia, reduciendo la cantidad de automiviles en uso en la ciudad. Ademas ahorraras dinero porque no gastaras en gasolina.</p>
-                    </div>
-                   
-                </div>
-            </div>
-            <div class="col s12 m4 feature">
-                <div class="row">
-                    <div class="col s12">
-                        <img  class="responsive-img" src="/static/images/manos.svg"/>
-                    </div>
-                    
-                </div>
-                <div class="row">
-                    
-                    <div class="col s12">
-                        <h2>Conoce</h2>
-                        <p class="flow-text">Con nuetra aplicacion podras conocer a muchas mas personas de la UP, esto te ayudara a mejorar tus conexiones laborales y sociales con gente de tu zona.</p>
-                    </div>
-                    
-                </div>
-            </div>
-            <div class="col s12 m4 feature">
-                <div class="row">
-                    <div class="col s12">
-                        <img  class="circle responsive-img" src="/static/images/dinero.svg"/>
-                    </div>
-                    
-                </div>
-                <div class="row">
-                    
-                    <div class="col s12">
-                        <h2>Mejor Lugar</h2>
-                        <p class="flow-text">Este beneficio te permite tener acceso a un lugar privilegiado que te permita ahorrar tiempo al estacionarte en un lugar con rapido acceso.</p>
-                    </div>
-                    
-                </div>
-            </div>
-            
-        </div>
-        <div class="row">
-            <div class="input-field col s8 m6 offset-s2 offset-m3">
-                <input type="email" id="email" class="validate"></input>
-                <label for="email">Email</label>
-            </div>    
-            
-        </div>
-        <div class="row" id="send_button">
-            <div class="col s6 offset-s3">
-                <button class="btn waves-effect waves-light redButton" onclick="sendEmail()">Apartar mi lugar</button>
-            </div>
-        </div>
-        
-        
-           
+  <div class="navbar-fixed">
+    <nav class="white no-shadows">
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo center"><img src="/static/images/logo.png"></img></a>
+      </div>
+    </nav>
+
+
+  </div>
+
+  <div class="container">
+    <div class="row title">
+      <div class="col s12 m6 offset-m3">
+        <p class="flow-text">Queremos unirte a los alumnos de la UP que quieren dar ride o que quieren rite.</p>
+      </div>
     </div>
-    <script>
-            function sendEmail(){
-                let email = document.getElementById("email").value
-                let sendButtonDiv = document.getElementById("send_button")
-                if (email.split("@")[1] === "up.edu.mx"){
-                        fetch(`https://up-carpool.herokuapp.com/updatevisit/${email}`).then((res)=>{
-                        
-                        if(res.status === 200){
-                            sendButtonDiv.innerHTML  += "<div id='success_message' class='col s6 offset-s3'> <p>Registro completado</p></div>"
-                        }else {
-                            sendButtonDiv.innerHTML  += "<div id='fail_message'class='col s6 offset-s3'> <p>Error haciendo el registro, intenta mas tarde</p></div>"
-                        }
-                        console.log(res)
-                    })
-                }else{
-                    sendButtonDiv.innerHTML  += "<div id='fail_message'class='col s6 offset-s3'> <p>Escribe un email valido de la UP</p></div>"
-                }
-                
-            }
-    </script>
+
+    <div class="row">
+      <div class="col s12 m4">
+        <div class="carousel">
+          <div class="col s12 m4 feature carousel-item">
+            <div class="row">
+              <i class="large material-icons">nature_people</i>
+            </div>
+            <div class="row">
+              <div class="col s12">
+                <p class="flow-text">Cuida el medio ambiente, comparte tu auto para que no haya tantos carros vacios
+                  contaminando.</p>
+              </div>
+            </div>
+
+          </div>
+          <div class="col s12 m4 feature carousel-item">
+            <div class="row">
+              <i class="large material-icons">people</i>
+            </div>
+            <div class="row">
+              <p class="flow-text">Conoce y conecta a muchas mas personas de la UP, mejora tus conexiones laborales y
+                sociales con gente de tu zona.</p>
+            </div>
+          </div>
+          <div class="col s12 m4 feature carousel-item">
+            <div class="row">
+              <i class="large material-icons">local_parking</i>
+            </div>
+            <div class="row">
+              <p class="flow-text">Utiliza un lugar privilegiado que te permita ahorrar tiempo al estacionarte en un
+                lugar
+                con rapido acceso.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="row">
+
+
+
+
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input type="email" id="email" class="validate"></input>
+        <label for="email">Email</label>
+      </div>
+
+    </div>
+    <div class="row" id="send_button">
+      <div class="col s12 center">
+        <button class="btn waves-effect waves-light redButton" onclick="sendEmail()">Apartar mi lugar</button>
+      </div>
+    </div>
+
+
+
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      let options = { duration: 200, fullWidth: true, numVisible: 1, noWrap: true, padding: 100 }
+      var elems = document.querySelectorAll('.carousel');
+      var instances = M.Carousel.init(elems, options);
+      setInterval(function (){
+        var elem = document.querySelector(".carousel")
+        var instance = M.Carousel.getInstance(elem)
+        instance.next()
+      },5000)
+     
+    });
+    
+    
+  </script>
 </body>
+
 </html>
