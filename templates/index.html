@@ -40,6 +40,7 @@
     p {
       text-align: justify;
       color: #353535 !important;
+      font-size: 16px;
     }
 
     .responsive-img {
@@ -61,7 +62,7 @@
     }
 
     .material-icons {
-      color: #A2A5A5;
+      color: #5C5B5B
     }
     .footer_back{
       background-color: #5C5B5B;
@@ -80,6 +81,12 @@
     main {
       flex: 1 0 auto;
     }
+    .carousel .indicators .indicator-item{
+      background-color: #A2A5A5;
+    }
+    .carousel .indicators .indicator-item.active {
+    background-color: #5C5B5B;
+    }
   </style>
 </head>
 
@@ -95,7 +102,7 @@
   </div>
   <main>
     <div class="container">
-    <div class="row title">
+    <div class="row">
       <div class="col s12 m6 l4 offset-m3 offset-l4">
         <p class="flow-text">Queremos unirte a los alumnos de la UP que quieren dar ride o que quieren rite.</p>
       </div>
@@ -183,14 +190,23 @@
         </footer>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      let options = { duration: 200, fullWidth: true, numVisible: 1, noWrap: true, padding: 100 }
+      let options = { duration: 200, fullWidth: true, numVisible: 1, noWrap: true, padding: 100 , indicators: true}
       var elems = document.querySelectorAll('.carousel');
       var instances = M.Carousel.init(elems, options);
+      var times = 0
       setInterval(function () {
         var elem = document.querySelector(".carousel")
         var instance = M.Carousel.getInstance(elem)
-        instance.next()
-      }, 5000)
+        if (times < 3) {
+          instance.next()
+          times++
+        }else{
+          instance.prev(2)
+          times = 0
+        }
+        
+        
+      }, 10000)
 
     });
 
