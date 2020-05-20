@@ -4,7 +4,7 @@ from json import dumps
 from flask_cors import CORS
 from bson.objectid import ObjectId
 
-app = Flask(__name__, static_url_path="/static", static_folder="/static")
+app = Flask(__name__)
 
 CORS(app)
 DB_URL = "mongodb://{}:{}@ds159328.mlab.com:59328/heroku_4g6p2nzn".format(
