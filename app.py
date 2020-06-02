@@ -17,6 +17,8 @@ def index():
     if not request.cookies.get("visitId"):
         db = DB(DB_URL)
         visit_id = db.register_visit()
+    else:
+        visit_id = request.cookies.get("visitId")
     return {"visitId": visit_id}
 
 
