@@ -14,12 +14,10 @@ DB_URL = "mongodb://{}:{}@ds159328.mlab.com:59328/heroku_4g6p2nzn".format(
 
 @app.route("/")
 def index():
-    res = make_response()
     if not request.cookies.get("visitId"):
         db = DB(DB_URL)
         visit_id = db.register_visit()
-        res.set_cookie("visitId", str(visit_id))
-    return res
+    return {"visitId": visit_id}
 
 
 @app.route("/updatevisit/<email>")
