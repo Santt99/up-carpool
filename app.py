@@ -19,7 +19,7 @@ def index():
         visit_id = db.register_visit()
     else:
         visit_id = request.cookies.get("visitId")
-    return {"visitId": visit_id}
+    return {"visitId": str(visit_id)}
 
 
 @app.route("/updatevisit/<email>")
