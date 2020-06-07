@@ -22,17 +22,14 @@ def index():
     return {"visitId": str(visit_id)}
 
 
-@app.route("/updatevisit/<email>")
-def update_visit(email):
+@app.route("/updatevisit/<visitId>/<email>")
+def update_visit(visitId, email):
 
-    if not request.cookies.get("visitId"):
-        return dumps({"message": "Error udpating email, no visit Id"}), 400
     from datetime import datetime
 
     db = DB(DB_URL)
     data = {"$set": {"second_timestamp": datetime.now(), "email": email}}
-    print()
-    key = {"_id": request.cookies.get("visitId")}
+    key = {"_id": visitId}
     db.update_visit(key, data)
     return dumps({"message": "Succesfully updated visit"})
 
