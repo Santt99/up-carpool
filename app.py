@@ -30,7 +30,8 @@ def update_visit(visitId, email):
     db = DB(DB_URL)
     data = {"$set": {"second_timestamp": datetime.now(), "email": email}}
     key = {"_id": visitId}
-    db.update_visit(key, data)
+    print(key)
+    db.update_one(key, data)
     return dumps({"message": "Succesfully updated visit"})
 
 
